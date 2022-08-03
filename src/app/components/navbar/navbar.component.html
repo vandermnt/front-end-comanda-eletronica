@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-md fixed-top navbar-dark flex-fill">
+  <div class="navbar-header pl-2 pr-2 ml-3 text-center"></div>
+  <div class="sidebar-toggler ml-auto mr-3">
+    <a class="btn nav-link" (click)="toggleSidebar()"
+      ><i class="fa fa-bars"></i
+    ></a>
+  </div>
+
+  <div
+    class="collapse navbar-collapse right-nav"
+    id="collapseBasic"
+    [collapse]="isCollapsed"
+  >
+    <!-- fiz esse botãozinho caso de tempo de fazermos login, dai aqui fica a opção de logout -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="btn nav-link">
+          <i class="far fa-user"></i>
+          <span class="link-text">Profile</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
