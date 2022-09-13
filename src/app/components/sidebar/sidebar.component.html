@@ -1,66 +1,65 @@
-<aside class="sidebar shadow-sm">
-  <div
-    class="sidebar-profile d-flex flex-column justify-content-center pt-5 pb-3"
-  >
-    <div class="picture-wrapper mb-4">
-      <div class="user-picture m-auto">
-        <img src="./assets/img/grupo.png" class="img-fluid" alt="" />
-      </div>
-    </div>
-    <div class="profile-details text-center pb-4">
-      <p class="mb-0 text-uppercase name">GRUPO 8</p>
-      <br />
-      <p class="text-uppercase role">Vanderson Mantovani</p>
-      <p class="text-uppercase role">Rodrigo Zbytkowski</p>
-      <p class="text-uppercase role">Alexandre Stephani</p>
-    </div>
-  </div>
-  <div class="sidebar-search pt-1 pb-1 pl-3 pr-3">
-    <input
-      type="search"
-      class="form-control rounded-pill"
-      name="search"
-      placeholder="Search ..."
-    />
-  </div>
-  <nav class="sidebar-menu pt-3 pb-3">
-    <div class="menu-header mt-3 mb-2">Menu</div>
-    <ul class="menu-items">
-      <li>
-        <a href="#" routerLink="/clients" routerLinkActive="active">
-          <i class="fas fa-user-alt"></i>
-          <span>Clientes</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" routerLink="/products" routerLinkActive="active">
-          <i class="fa fa-align-center"></i>
-          <span>Produtos</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" routerLink="/orders" routerLinkActive="active">
-          <i class="fas fa-shopping-cart"></i>
-          <span>Pedidos</span>
-        </a>
-      </li>
+<div class="logo">
+    <a href="https://www.creative-tim.com" class="simple-text">
+        <div class="logo-img">
+            <img src="/assets/img/angular2-logo-red.png"/>
+        </div>
+        Creative Tim
+    </a>
+</div>
+<div class="sidebar-wrapper">
+  <div *ngIf="isMobileMenu()">
+    <form class="navbar-form">
+      <span class="bmd-form-group">
+        <div class="input-group no-border">
+          <input type="text" value="" class="form-control" placeholder="Search...">
+          <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+            <i class="material-icons">search</i>
+            <div class="ripple-container"></div>
+          </button>
+        </div>
+      </span>
+    </form>
+    <ul class="nav navbar-nav nav-mobile-menu">
+        <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">
+                <i class="material-icons">dashboard</i>
+                <p>
+                    <span class="d-lg-none d-md-block">Stats</span>
+                </p>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="javascript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">notifications</i>
+                <span class="notification">5</span>
+                <p>
+                    <span class="d-lg-none d-md-block">Some Actions</span>
+                </p>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                <a class="dropdown-item" href="#">Another Notification</a>
+                <a class="dropdown-item" href="#">Another One</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">
+                <i class="material-icons">person</i>
+                <p>
+                    <span class="d-lg-none d-md-block">Account</span>
+                </p>
+            </a>
+        </li>
     </ul>
-    <div class="menu-header mt-4 mb-4">Github Repo</div>
-    <div class="view-source mb-3">
-      <a
-        href="https://github.com/Ale-Ste/grupo-08-webdev-front"
-        target="_blank"
-        class="btn btn-block btn-lightning rounded-0"
-        >Front-End</a
-      >
-    </div>
-    <div class="view-source mb-3">
-      <a
-        href="https://github.com/Ale-Ste/grupo-08-webdev-back"
-        target="_blank"
-        class="btn btn-block btn-lightning rounded-0"
-        >Back-End</a
-      >
-    </div>
-  </nav>
-</aside>
+  </div>
+    <ul class="nav">
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+            <a class="nav-link" [routerLink]="[menuItem.path]">
+                <i class="material-icons">{{menuItem.icon}}</i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+    </ul>
+</div>

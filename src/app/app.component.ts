@@ -1,21 +1,11 @@
-import { Component } from '@angular/core';
-import { AppService } from './services/app.service';
+import { Component} from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private appService: AppService) {}
-  getClasses() {
-    const classes = {
-      'pinned-sidebar': this.appService.getSidebarStat().isSidebarPinned,
-      'toggeled-sidebar': this.appService.getSidebarStat().isSidebarToggeled,
-    };
-    return classes;
-  }
-  toggleSidebar() {
-    this.appService.toggleSidebar();
-  }
+
 }
