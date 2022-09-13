@@ -14,12 +14,53 @@
                     <input
                       matInput
                       placeholder="Nome"
-                      [(ngModel)]="product.description"
+                      [(ngModel)]="product.name"
                       name="name"
                       minlength="3"
                       type="text"
                       required
                     />
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      placeholder="Preço"
+                      [(ngModel)]="product.price"
+                      name="name"
+                      type="number"
+                      required
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      placeholder="Descrição"
+                      [(ngModel)]="product.description"
+                      name="description"
+                      minlength="3"
+                      type="text"
+                      required
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field appearance="example-full-width">
+                    <mat-label>Selecione uma categoria</mat-label>
+                    <mat-select [(ngModel)]="product.id_category">
+                      <mat-option
+                        *ngFor="let category of categories"
+                        [value]="category"
+                        >{{ category.name }}</mat-option
+                      >
+                    </mat-select>
                   </mat-form-field>
                 </div>
               </div>

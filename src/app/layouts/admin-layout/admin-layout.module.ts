@@ -24,6 +24,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { CategoryModule } from "app/modules/category/category.module";
 import { ProductModule } from "app/modules/product/product.module";
 import { NewProductComponent } from "app/modules/product/pages/new-product/new-product.component";
+import { ProductListComponent } from "app/modules/product/pages/list-product/product-list.component";
 
 @NgModule({
   imports: [
@@ -52,6 +53,7 @@ import { NewProductComponent } from "app/modules/product/pages/new-product/new-p
     NewCategoryComponent,
     CategoryListComponent,
     NewProductComponent,
+    ProductListComponent,
   ],
   providers: [],
 })

@@ -5,7 +5,7 @@ export class Product {
   public name: string;
   public price: number;
   public description: number;
-  public category: Category;
+  public id_category: Category;
 
   constructor() {}
 }
