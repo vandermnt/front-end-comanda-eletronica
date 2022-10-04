@@ -32,7 +32,6 @@ export class NewProductComponent implements OnInit {
 
   create(): void {
     if (this.productForm.form.valid) {
-      console.log(this.product);
       this.productService
         .create(this.product)
         .subscribe(() => this.router.navigate(["product"]));

@@ -1,0 +1,70 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">NOVO GARÇOM</h4>
+          </div>
+          <div class="card-body">
+            <form #userForm="ngForm">
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      placeholder="Nome"
+                      [(ngModel)]="user.name"
+                      name="name"
+                      minlength="3"
+                      type="text"
+                      required
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      placeholder="E-mail"
+                      [(ngModel)]="user.email"
+                      name="email"
+                      minlength="3"
+                      type="email"
+                      required
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      placeholder="Senha"
+                      [(ngModel)]="user.password"
+                      name="password"
+                      minlength="3"
+                      type="password"
+                      required
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <button
+                (click)="create()"
+                mat-raised-button
+                class="btn btn-success pull-right"
+              >
+                SALVAR
+              </button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

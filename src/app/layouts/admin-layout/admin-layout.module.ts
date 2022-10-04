@@ -19,8 +19,6 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatSelectModule } from "@angular/material/select";
 import { NewCategoryComponent } from "app/modules/category/pages/new-category/new-category.component";
 import { CategoryListComponent } from "app/modules/category/pages/list-category/category-list.component";
-import { CategoryService } from "app/modules/category/services/category.service";
-import { HttpClientModule } from "@angular/common/http";
 import { CategoryModule } from "app/modules/category/category.module";
 import { ProductModule } from "app/modules/product/product.module";
 import { NewProductComponent } from "app/modules/product/pages/new-product/new-product.component";
