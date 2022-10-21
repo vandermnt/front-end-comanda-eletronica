@@ -1,7 +1,6 @@
 import { Routes } from "@angular/router";
 
-import { DashboardComponent } from "../../dashboard/dashboard.component";
-import { UserProfileComponent } from "../../modules/user-profile/user-profile.component";
+import { ListProfileComponent } from "../../modules/user-profile/list-profile/list-profile.component";
 import { TableListComponent } from "../../table-listt/table-list.component";
 import { TypographyComponent } from "../../typography/typography.component";
 import { IconsComponent } from "../../icons/icons.component";
@@ -12,6 +11,8 @@ import { CategoryListComponent } from "app/modules/category/pages/list-category/
 import { NewCategoryComponent } from "app/modules/category/pages/new-category/new-category.component";
 import { ProductListComponent } from "app/modules/product/pages/list-product/product-list.component";
 import { NewProductComponent } from "app/modules/product/pages/new-product/new-product.component";
+import { ListCommandComponent } from "app/modules/command/page/list-order/list-command.component";
+import { UserProfileComponent } from "app/modules/user-profile/new-profile/user-profile.component";
 
 export const AdminLayoutRoutes: Routes = [
   // {
@@ -56,16 +57,17 @@ export const AdminLayoutRoutes: Routes = [
   //         component: UpgradeComponent
   //     }]
   // }
-  { path: "dashboard", component: DashboardComponent },
-  { path: "user-profile", component: UserProfileComponent },
+  { path: "commands", component: ListCommandComponent },
+  { path: "users", component: ListProfileComponent },
+  { path: "user/new", component: UserProfileComponent },
   { path: "table-list", component: TableListComponent },
   { path: "typography", component: TypographyComponent },
   { path: "icons", component: IconsComponent },
   { path: "maps", component: MapsComponent },
   { path: "notifications", component: NotificationsComponent },
   { path: "upgrade", component: UpgradeComponent },
-  { path: "category", component: CategoryListComponent },
+  { path: "categories", component: CategoryListComponent },
   { path: "category/new", component: NewCategoryComponent },
-  { path: "product", component: ProductListComponent },
+  { path: "products", component: ProductListComponent },
   { path: "product/new", component: NewProductComponent },
 ];

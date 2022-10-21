@@ -1,21 +1,23 @@
 <div class="main-content">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4">
+      <div *ngFor="let command of commands" class="col-md-4">
         <div class="card card-chart">
           <div class="card-header card-header-success">
-            <h5><b>MESA 05</b></h5>
+            <h5>
+              <b>MESA {{ command.id_table }}</b>
+            </h5>
             <!-- <div class="ct-chart" id="dailySalesChart"></div> -->
           </div>
           <div class="card-body">
-            <h4 class="card-title">Daily Sales</h4>
-            <p class="card-category">
+            <h4 class="card-title">Total: R$ {{ command.value }}</h4>
+            <!-- <p class="card-category">
               <span class="text-success"
                 ><i class="fa fa-long-arrow-up"></i> 55%
               </span>
               increase in today sales.
-            </p>
-            <button mat-raised-button class="btn btn-success btn-block">
+            </p> -->
+            <button mat-raised-button class="btn btn-info btn-block">
               <b>FECHAR MESA</b>
             </button>
           </div>

@@ -3,12 +3,12 @@ import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
-import { BackendService } from "app/backend";
-import { UserProfileService } from "./services/user-profile.service";
+import { BackendService } from "app/backend/backend-service";
+import { CommandService } from "./services/command.service";
 
 @NgModule({
   declarations: [],
   imports: [CommonModule, RouterModule, FormsModule, HttpClientModule],
-  providers: [UserProfileService, BackendService],
+  providers: [BackendService, CommandService],
 })
-export class UserProfileModule {}
+export class CommandModule {}

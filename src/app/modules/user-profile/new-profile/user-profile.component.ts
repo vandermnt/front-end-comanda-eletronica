@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
 import { User } from "app/shared/models/user.model";
+
 import { UserProfileService } from "../services/user-profile.service";
 
 @Component({
@@ -27,7 +28,7 @@ export class UserProfileComponent implements OnInit {
     if (this.userForm.form.valid) {
       this.userService
         .create(this.user)
-        .subscribe(() => this.router.navigate(["product"]));
+        .subscribe(() => this.router.navigate(["users"]));
     }
   }
 }

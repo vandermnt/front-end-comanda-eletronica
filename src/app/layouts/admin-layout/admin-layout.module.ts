@@ -4,7 +4,7 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AdminLayoutRoutes } from "./admin-layout.routing";
 import { DashboardComponent } from "../../dashboard/dashboard.component";
-import { UserProfileComponent } from "../../modules/user-profile/user-profile.component";
+import { ListProfileComponent } from "../../modules/user-profile/list-profile/list-profile.component";
 import { TableListComponent } from "../../table-listt/table-list.component";
 import { TypographyComponent } from "../../typography/typography.component";
 import { IconsComponent } from "../../icons/icons.component";
@@ -23,6 +23,10 @@ import { CategoryModule } from "app/modules/category/category.module";
 import { ProductModule } from "app/modules/product/product.module";
 import { NewProductComponent } from "app/modules/product/pages/new-product/new-product.component";
 import { ProductListComponent } from "app/modules/product/pages/list-product/product-list.component";
+import { UserProfileComponent } from "app/modules/user-profile/new-profile/user-profile.component";
+import { ListCommandComponent } from "app/modules/command/page/list-order/list-command.component";
+import { UserProfileModule } from "app/modules/user-profile/user-profile.module";
+import { CommandModule } from "app/modules/command/command.module";
 
 @NgModule({
   imports: [
@@ -38,20 +42,27 @@ import { ProductListComponent } from "app/modules/product/pages/list-product/pro
     MatTooltipModule,
     CategoryModule,
     ProductModule,
+    CommandModule,
+    UserProfileModule,
   ],
   declarations: [
     DashboardComponent,
-    UserProfileComponent,
+    ListCommandComponent,
+    ListProfileComponent,
     TableListComponent,
     TypographyComponent,
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+    UserProfileComponent,
+    ListProfileComponent,
     NewCategoryComponent,
     CategoryListComponent,
     NewProductComponent,
+    ListProfileComponent,
     ProductListComponent,
+    UserProfileComponent,
   ],
   providers: [],
 })
