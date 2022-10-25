@@ -27,6 +27,7 @@ import { UserProfileComponent } from "app/modules/user-profile/new-profile/user-
 import { ListCommandComponent } from "app/modules/command/page/list-order/list-command.component";
 import { UserProfileModule } from "app/modules/user-profile/user-profile.module";
 import { CommandModule } from "app/modules/command/command.module";
+import { EditProductComponent } from "app/modules/product/pages/edit-product/edit-product.component";
 
 @NgModule({
   imports: [
@@ -63,6 +64,7 @@ import { CommandModule } from "app/modules/command/command.module";
     ListProfileComponent,
     ProductListComponent,
     UserProfileComponent,
+    EditProductComponent,
   ],
   providers: [],
 })

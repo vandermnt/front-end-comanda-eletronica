@@ -23,8 +23,8 @@ export class ProductService {
     return this.backendService.findById(`${this.path}/${id}`);
   }
 
-  update(id: string, product: Product): Observable<Product> {
-    return this.backendService.update(`${this.path}/${id}`, product);
+  update(product: Product): Observable<Product> {
+    return this.backendService.update(`${this.path}/${product.id}`, product);
   }
 
   remove(id: string): Observable<void> {

@@ -13,8 +13,27 @@ export class CategoryListComponent implements OnInit {
   constructor(private categoryService: CategoryService) {}
 
   ngOnInit() {
+    this.listAll();
+  }
+
+  listAll() {
     this.categoryService
       .listAll()
       .subscribe((categories: any) => (this.categories = categories));
+  }
+
+  deleteCategory(categoryId: string) {
+    if (confirm("Deseja realmente remover essa categoria")) {
+      this.categoryService.remove(categoryId).subscribe(
+        () => {
+          this.listAll();
+        },
+        () => {
+          alert(
+            "Não foi possível remover essa categoria. Existem produtos vinculados"
+          );
+        }
+      );
+    }
   }
 }

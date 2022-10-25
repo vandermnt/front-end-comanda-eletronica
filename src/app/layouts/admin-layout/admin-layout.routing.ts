@@ -13,6 +13,7 @@ import { ProductListComponent } from "app/modules/product/pages/list-product/pro
 import { NewProductComponent } from "app/modules/product/pages/new-product/new-product.component";
 import { ListCommandComponent } from "app/modules/command/page/list-order/list-command.component";
 import { UserProfileComponent } from "app/modules/user-profile/new-profile/user-profile.component";
+import { EditProductComponent } from "app/modules/product/pages/edit-product/edit-product.component";
 
 export const AdminLayoutRoutes: Routes = [
   // {
@@ -70,4 +71,5 @@ export const AdminLayoutRoutes: Routes = [
   { path: "category/new", component: NewCategoryComponent },
   { path: "products", component: ProductListComponent },
   { path: "product/new", component: NewProductComponent },
+  { path: "product/edit/:id", component: EditProductComponent },
 ];

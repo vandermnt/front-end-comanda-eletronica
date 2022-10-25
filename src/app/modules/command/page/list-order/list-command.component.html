@@ -17,14 +17,96 @@
               </span>
               increase in today sales.
             </p> -->
-            <button mat-raised-button class="btn btn-info btn-block">
+            <button
+              (click)="openDialog()"
+              mat-raised-button
+              class="btn btn-info btn-block"
+            >
               <b>FECHAR MESA</b>
+            </button>
+            <button
+              class="btn btn-info btn-block btn-fill"
+              data-toggle="modal"
+              data-target="#buy"
+            >
+              Download Free
             </button>
           </div>
           <div class="card-footer">
             <div class="stats">
               <i class="material-icons">access_time</i> Atualizado 4 minutes
               atrás
+            </div>
+          </div>
+        </div>
+        <div
+          class="modal modal-angular fade"
+          id="buy"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="myModalLabel"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="margin-top text-center">
+                  <b>MESA {{ command.id_table }}</b>
+                </h4>
+                <br />
+                <h5 style="margin: 0">Valor:</h5>
+                <input matInput placeholder="R$ {{ command.value }}" disabled />
+                <br />
+                <br />
+                <h5>Tipo de pagamento</h5>
+                <div class="row">
+                  <div style="margin-left: 15px; margin-right: 9px">
+                    <input
+                      type="radio"
+                      [(ngModel)]="atividadeFixa"
+                      value="debito"
+                      required
+                    />
+                    DÉBITO
+                  </div>
+
+                  <div style="margin-right: 9px">
+                    <input
+                      type="radio"
+                      [(ngModel)]="atividadeFixa"
+                      value="credito"
+                      required
+                    />
+                    CRÉDITO
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      [(ngModel)]="atividadeFixa"
+                      value="dinheiro"
+                      required
+                    />
+                    DINHEIRO
+                  </div>
+                </div>
+
+                <br />
+                <button
+                  (click)="openDialog()"
+                  mat-raised-button
+                  class="btn btn-success btn-block"
+                >
+                  <b>FECHAR MESA</b>
+                </button>
+                <br />
+              </div>
             </div>
           </div>
         </div>

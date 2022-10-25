@@ -21,6 +21,20 @@
                     <td>{{ product.name }}</td>
                     <td>{{ product.description }}</td>
                     <td>{{ product.price }}</td>
+                    <td>
+                      <i
+                        (click)="deleteProduct(product.id)"
+                        type="button"
+                        class="material-icons"
+                        >delete</i
+                      >
+                      <i
+                        [routerLink]="['/product/edit', product.id]"
+                        type="button"
+                        class="material-icons"
+                        >edit</i
+                      >
+                    </td>
                   </tr>
                 </tbody>
               </table>

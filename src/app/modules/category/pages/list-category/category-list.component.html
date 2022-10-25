@@ -17,6 +17,20 @@
                   <tr *ngFor="let category of categories">
                     <td>{{ category.id }}</td>
                     <td>{{ category.name }}</td>
+                    <td>
+                      <i
+                        (click)="deleteCategory(category.id)"
+                        type="button"
+                        class="material-icons"
+                        >delete</i
+                      >
+                      <i
+                        (click)="editCategory(category)"
+                        type="button"
+                        class="material-icons"
+                        >edit</i
+                      >
+                    </td>
                   </tr>
                 </tbody>
               </table>
