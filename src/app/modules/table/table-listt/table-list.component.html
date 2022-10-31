@@ -1,0 +1,43 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">Mesas</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <th>NÚMERO</th>
+                  <th>DISPONÍVEL</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let table of tables">
+                    <td>{{ table.number }}</td>
+                    <td>
+                      <div
+                        [ngClass]="{
+                          circulo: table.status === false,
+                          circulo2: table.status === true
+                        }"
+                      ></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <a
+          href="#"
+          routerLink="/table/new"
+          mat-raised-button
+          class="btn btn-success pull-right"
+          >NOVA MESA</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

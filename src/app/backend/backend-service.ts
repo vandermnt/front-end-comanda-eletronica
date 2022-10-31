@@ -32,6 +32,10 @@ class BackendService<T> {
   delete(path: string): Observable<void> {
     return this.httpClient.delete<void>(`${this.BASE_URL}/${path}`, httpOptions);
   }
+
+  closeTable(path: string, data: T): Observable<void> {
+    return this.httpClient.put<void>(`${this.BASE_URL}/${path}`, data, httpOptions);
+  }
 }
 
 export { BackendService };

@@ -54,6 +54,27 @@
                 </div>
               </div>
               <div class="row">
+                <div style="margin-left: 15px; margin-right: 9px">
+                  <input
+                    type="radio"
+                    [(ngModel)]="user.is_admin"
+                    value="false"
+                    required
+                  />
+                  GARÇOM
+                </div>
+
+                <div style="margin-right: 9px">
+                  <input
+                    type="radio"
+                    [(ngModel)]="user.is_admin"
+                    value="true"
+                    required
+                  />
+                  ADMIN
+                </div>
+              </div>
+              <div class="row">
                 <div class="col-md-6"></div>
               </div>
               <button

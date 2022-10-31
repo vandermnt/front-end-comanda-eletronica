@@ -25,7 +25,7 @@
                         >delete</i
                       >
                       <i
-                        (click)="editCategory(category)"
+                        [routerLink]="['/category/edit', category.id]"
                         type="button"
                         class="material-icons"
                         >edit</i

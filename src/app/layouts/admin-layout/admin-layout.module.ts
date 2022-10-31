@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AdminLayoutRoutes } from "./admin-layout.routing";
 import { DashboardComponent } from "../../dashboard/dashboard.component";
 import { ListProfileComponent } from "../../modules/user-profile/list-profile/list-profile.component";
-import { TableListComponent } from "../../table-listt/table-list.component";
+import { TableListComponent } from "../../modules/table/table-listt/table-list.component";
 import { TypographyComponent } from "../../typography/typography.component";
 import { IconsComponent } from "../../icons/icons.component";
 import { MapsComponent } from "../../maps/maps.component";
@@ -28,6 +28,9 @@ import { ListCommandComponent } from "app/modules/command/page/list-order/list-c
 import { UserProfileModule } from "app/modules/user-profile/user-profile.module";
 import { CommandModule } from "app/modules/command/command.module";
 import { EditProductComponent } from "app/modules/product/pages/edit-product/edit-product.component";
+import { EditCategoryComponent } from "app/modules/category/pages/edit-category/edit-category.component";
+import { TableModule } from "app/modules/table/table.module";
+import { NewTableComponent } from "app/modules/table/new-table/new-table.component";
 
 @NgModule({
   imports: [
@@ -45,6 +48,7 @@ import { EditProductComponent } from "app/modules/product/pages/edit-product/edi
     ProductModule,
     CommandModule,
     UserProfileModule,
+    TableModule,
   ],
   declarations: [
     DashboardComponent,
@@ -65,6 +69,9 @@ import { EditProductComponent } from "app/modules/product/pages/edit-product/edi
     ProductListComponent,
     UserProfileComponent,
     EditProductComponent,
+    EditCategoryComponent,
+    TableListComponent,
+    NewTableComponent,
   ],
   providers: [],
 })

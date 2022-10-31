@@ -18,18 +18,12 @@
               increase in today sales.
             </p> -->
             <button
-              (click)="openDialog()"
               mat-raised-button
               class="btn btn-info btn-block"
-            >
-              <b>FECHAR MESA</b>
-            </button>
-            <button
-              class="btn btn-info btn-block btn-fill"
               data-toggle="modal"
               data-target="#buy"
             >
-              Download Free
+              <b>FECHAR MESA</b>
             </button>
           </div>
           <div class="card-footer">
@@ -70,7 +64,7 @@
                   <div style="margin-left: 15px; margin-right: 9px">
                     <input
                       type="radio"
-                      [(ngModel)]="atividadeFixa"
+                      [(ngModel)]="payment"
                       value="debito"
                       required
                     />
@@ -80,7 +74,7 @@
                   <div style="margin-right: 9px">
                     <input
                       type="radio"
-                      [(ngModel)]="atividadeFixa"
+                      [(ngModel)]="payment"
                       value="credito"
                       required
                     />
@@ -89,17 +83,30 @@
                   <div>
                     <input
                       type="radio"
-                      [(ngModel)]="atividadeFixa"
+                      [(ngModel)]="payment"
                       value="dinheiro"
                       required
+                      id="dinheiro"
                     />
                     DINHEIRO
                   </div>
                 </div>
+                <br />
+                <div *ngIf="payment === 'dinheiro'">
+                  <h5 style="margin: 0">Digite a valor:</h5>
+                  <input [(ngModel)]="moneyValue" matInput />
+                  <br />
+                  <br />
+                  <h5 style="margin: 0">Troco:</h5>
+                  <input
+                    matInput
+                    placeholder="{{ moneyValue - command.value }} "
+                  />
+                </div>
 
                 <br />
                 <button
-                  (click)="openDialog()"
+                  (click)="closeTable(command.id_table, command.id)"
                   mat-raised-button
                   class="btn btn-success btn-block"
                 >

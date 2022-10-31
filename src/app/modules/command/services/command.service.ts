@@ -13,4 +13,8 @@ export class CommandService {
   listAll(): Observable<Command[]> {
     return this.backendService.listAll(this.path);
   }
+
+  closeTable(data: any): Observable<void> {
+    return this.backendService.closeTable('tables/close', data)
+  }
 }

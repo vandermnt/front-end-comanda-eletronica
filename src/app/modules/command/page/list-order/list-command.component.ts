@@ -8,11 +8,28 @@ import { CommandService } from "../../services/command.service";
 })
 export class ListCommandComponent implements OnInit {
   commands: Command;
+  payment: string;
+  moneyValue: number;
+
   constructor(private commandService: CommandService) {}
 
   ngOnInit(): void {
+    this.listAll();
+  }
+
+  listAll(): void {
     this.commandService
       .listAll()
       .subscribe((commands: any) => (this.commands = commands));
+  }
+
+  closeTable(tableId, commandId) {
+    console.log(this.commands);
+    console.log(tableId);
+    console.log(commandId);
+
+    this.commandService
+      .closeTable({ tableId, commandId })
+      .subscribe(() => this.listAll());
   }
 }

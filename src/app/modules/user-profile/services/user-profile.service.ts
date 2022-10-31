@@ -15,16 +15,16 @@ export class UserProfileService {
     return this.backendService.listAll(this.path);
   }
 
-  create(product: User): Observable<User> {
-    return this.backendService.create(this.path, product);
+  create(user: User): Observable<User> {
+    return this.backendService.create(this.path, user);
   }
 
   findById(id: string): Observable<User> {
     return this.backendService.findById(`${this.path}/${id}`);
   }
 
-  update(id: string, product: User): Observable<User> {
-    return this.backendService.update(`${this.path}/${id}`, product);
+  update(id: string, user: User): Observable<User> {
+    return this.backendService.update(`${this.path}/${id}`, user);
   }
 
   remove(id: string): Observable<void> {

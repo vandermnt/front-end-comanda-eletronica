@@ -25,9 +25,16 @@ export class ProductListComponent implements OnInit {
 
   deleteProduct(productId: string) {
     if (confirm("Deseja realmente remover esse produto?")) {
-      this.productService.remove(productId).subscribe(() => {
-        this.listAll();
-      });
+      this.productService.remove(productId).subscribe(
+        () => {
+          this.listAll();
+        },
+        () => {
+          alert(
+            "Não foi possível excluir esse produto. Pois o mesmo tem pedidos vinculados!"
+          );
+        }
+      );
     }
   }
 }

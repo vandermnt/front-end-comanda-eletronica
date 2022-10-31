@@ -1,7 +1,7 @@
 import { Routes } from "@angular/router";
 
 import { ListProfileComponent } from "../../modules/user-profile/list-profile/list-profile.component";
-import { TableListComponent } from "../../table-listt/table-list.component";
+import { TableListComponent } from "../../modules/table/table-listt/table-list.component";
 import { TypographyComponent } from "../../typography/typography.component";
 import { IconsComponent } from "../../icons/icons.component";
 import { MapsComponent } from "../../maps/maps.component";
@@ -14,6 +14,8 @@ import { NewProductComponent } from "app/modules/product/pages/new-product/new-p
 import { ListCommandComponent } from "app/modules/command/page/list-order/list-command.component";
 import { UserProfileComponent } from "app/modules/user-profile/new-profile/user-profile.component";
 import { EditProductComponent } from "app/modules/product/pages/edit-product/edit-product.component";
+import { EditCategoryComponent } from "app/modules/category/pages/edit-category/edit-category.component";
+import { NewTableComponent } from "app/modules/table/new-table/new-table.component";
 
 export const AdminLayoutRoutes: Routes = [
   // {
@@ -61,7 +63,7 @@ export const AdminLayoutRoutes: Routes = [
   { path: "commands", component: ListCommandComponent },
   { path: "users", component: ListProfileComponent },
   { path: "user/new", component: UserProfileComponent },
-  { path: "table-list", component: TableListComponent },
+  { path: "tables", component: TableListComponent },
   { path: "typography", component: TypographyComponent },
   { path: "icons", component: IconsComponent },
   { path: "maps", component: MapsComponent },
@@ -71,5 +73,7 @@ export const AdminLayoutRoutes: Routes = [
   { path: "category/new", component: NewCategoryComponent },
   { path: "products", component: ProductListComponent },
   { path: "product/new", component: NewProductComponent },
+  { path: "table/new", component: NewTableComponent },
   { path: "product/edit/:id", component: EditProductComponent },
+  { path: "category/edit/:id", component: EditCategoryComponent },
 ];

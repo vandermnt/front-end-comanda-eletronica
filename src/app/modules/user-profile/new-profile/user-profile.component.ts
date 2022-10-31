@@ -14,6 +14,7 @@ export class UserProfileComponent implements OnInit {
   @ViewChild("userForm") userForm!: NgForm;
 
   user: User;
+  payment: string;
 
   constructor(
     private userService: UserProfileService,

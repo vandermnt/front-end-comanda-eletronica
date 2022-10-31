@@ -1,29 +1,29 @@
 import { Injectable } from "@angular/core";
 import { BackendService } from "app/backend";
-import { Category } from "app/shared/models/category.model";
+import { Table } from "app/shared/models/table.model";
 import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root",
 })
-export class CategoryService {
-  private path = "categories";
+export class TableService {
+  private path = "tables";
 
-  constructor(private backendService: BackendService<Category>) {}
+  constructor(private backendService: BackendService<Table>) {}
 
-  listAll(): Observable<Category[]> {
+  listAll(): Observable<Table[]> {
     return this.backendService.listAll(this.path);
   }
 
-  create(category: Category): Observable<Category> {
+  create(category: Table): Observable<Table> {
     return this.backendService.create(this.path, category);
   }
 
-  findById(id: string): Observable<Category> {
+  findById(id: string): Observable<Table> {
     return this.backendService.findById(`${this.path}/${id}`);
   }
 
-  update(category: Category): Observable<Category> {
+  update(category: Table): Observable<Table> {
     console.log(category);
     return this.backendService.update(`${this.path}/${category.id}`, category);
   }
