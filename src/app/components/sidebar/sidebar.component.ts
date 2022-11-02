@@ -18,7 +18,7 @@ export const ROUTES: RouteInfo[] = [
     icon: "add_shopping_cart_icon",
     class: "",
   },
-  { path: "/report", title: "Relatórios", icon: "assignment", class: "" },
+  { path: "/reports", title: "Relatórios", icon: "assignment", class: "" },
 
   // {
   //   path: "/upgrade",

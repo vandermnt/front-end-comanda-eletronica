@@ -15,17 +15,16 @@ export class TableService {
     return this.backendService.listAll(this.path);
   }
 
-  create(category: Table): Observable<Table> {
-    return this.backendService.create(this.path, category);
+  create(table: Table): Observable<Table> {
+    return this.backendService.create(this.path, table);
   }
 
   findById(id: string): Observable<Table> {
     return this.backendService.findById(`${this.path}/${id}`);
   }
 
-  update(category: Table): Observable<Table> {
-    console.log(category);
-    return this.backendService.update(`${this.path}/${category.id}`, category);
+  update(table: Table): Observable<Table> {
+    return this.backendService.update(`${this.path}/${table.id}`, table);
   }
 
   remove(id: string): Observable<void> {

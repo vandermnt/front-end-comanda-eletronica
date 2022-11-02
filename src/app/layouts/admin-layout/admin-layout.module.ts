@@ -31,6 +31,23 @@ import { EditProductComponent } from "app/modules/product/pages/edit-product/edi
 import { EditCategoryComponent } from "app/modules/category/pages/edit-category/edit-category.component";
 import { TableModule } from "app/modules/table/table.module";
 import { NewTableComponent } from "app/modules/table/new-table/new-table.component";
+import {
+  CurrencyMaskConfig,
+  CurrencyMaskModule,
+  CURRENCY_MASK_CONFIG,
+} from "ng2-currency-mask";
+import { ReportListComponent } from "app/modules/reports/pages/list-report/report-list.component";
+import { ReportModule } from "app/modules/reports/report.module";
+
+export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
+  align: "left",
+  allowNegative: true,
+  decimal: ",",
+  precision: 2,
+  prefix: "R$ ",
+  suffix: "",
+  thousands: ".",
+};
 
 @NgModule({
   imports: [
@@ -49,6 +66,8 @@ import { NewTableComponent } from "app/modules/table/new-table/new-table.compone
     CommandModule,
     UserProfileModule,
     TableModule,
+    CurrencyMaskModule,
+    ReportModule,
   ],
   declarations: [
     DashboardComponent,
@@ -70,9 +89,11 @@ import { NewTableComponent } from "app/modules/table/new-table/new-table.compone
     UserProfileComponent,
     EditProductComponent,
     EditCategoryComponent,
-    TableListComponent,
     NewTableComponent,
+    ReportListComponent,
   ],
-  providers: [],
+  providers: [
+    { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig },
+  ],
 })
 export class AdminLayoutModule {}

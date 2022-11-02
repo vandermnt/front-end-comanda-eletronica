@@ -18,6 +18,5 @@ export class TableListComponent implements OnInit {
 
   listAll() {
     this.tableService.listAll().subscribe((tables) => (this.tables = tables));
-    console.log(this.tables);
   }
 }

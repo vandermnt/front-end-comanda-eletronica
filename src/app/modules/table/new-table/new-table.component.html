@@ -7,7 +7,7 @@
             <h4 class="card-title">NOVA MESA</h4>
           </div>
           <div class="card-body">
-            <form #categoryForm="ngForm">
+            <form #tableForm="ngForm">
               <div class="row">
                 <div class="col-md-6">
                   <mat-form-field class="example-full-width">
@@ -16,7 +16,6 @@
                       placeholder="NÚMERO"
                       [(ngModel)]="table.number"
                       name="number"
-                      minlength="3"
                       type="text"
                       required
                     />

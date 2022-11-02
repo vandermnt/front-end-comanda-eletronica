@@ -28,8 +28,9 @@
                       matInput
                       placeholder="Preço"
                       [(ngModel)]="product.price"
+                      [value]="product.price"
+                      currencyMask
                       name="name"
-                      type="number"
                       required
                     />
                   </mat-form-field>

@@ -36,6 +36,10 @@ class BackendService<T> {
   closeTable(path: string, data: T): Observable<void> {
     return this.httpClient.put<void>(`${this.BASE_URL}/${path}`, data, httpOptions);
   }
+
+  listByDate(path: string): Observable<T[]> {
+    return this.httpClient.get<T[]>(`${this.BASE_URL}/${path}`, httpOptions);
+  }
 }
 
 export { BackendService };

@@ -18,18 +18,22 @@ export class ListCommandComponent implements OnInit {
   }
 
   listAll(): void {
-    this.commandService
-      .listAll()
-      .subscribe((commands: any) => (this.commands = commands));
+    this.commandService.listAll().subscribe((commands: any) => {
+      this.commands = commands;
+    });
   }
 
-  closeTable(tableId, commandId) {
-    console.log(this.commands);
-    console.log(tableId);
-    console.log(commandId);
-
+  closeTable(tableId: string, commandId: string) {
     this.commandService
       .closeTable({ tableId, commandId })
       .subscribe(() => this.listAll());
+  }
+
+  formatValueCommand(value: any) {
+    return value.toLocaleString("pt-BR", {
+      minimumFractionDigits: 2,
+      style: "currency",
+      currency: "BRL",
+    });
   }
 }

@@ -16,6 +16,7 @@ import { UserProfileComponent } from "app/modules/user-profile/new-profile/user-
 import { EditProductComponent } from "app/modules/product/pages/edit-product/edit-product.component";
 import { EditCategoryComponent } from "app/modules/category/pages/edit-category/edit-category.component";
 import { NewTableComponent } from "app/modules/table/new-table/new-table.component";
+import { ReportListComponent } from "app/modules/reports/pages/list-report/report-list.component";
 
 export const AdminLayoutRoutes: Routes = [
   // {
@@ -72,6 +73,7 @@ export const AdminLayoutRoutes: Routes = [
   { path: "categories", component: CategoryListComponent },
   { path: "category/new", component: NewCategoryComponent },
   { path: "products", component: ProductListComponent },
+  { path: "reports", component: ReportListComponent },
   { path: "product/new", component: NewProductComponent },
   { path: "table/new", component: NewTableComponent },
   { path: "product/edit/:id", component: EditProductComponent },
