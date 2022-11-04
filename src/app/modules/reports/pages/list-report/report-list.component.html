@@ -36,6 +36,34 @@
                   </mat-form-field>
                 </div>
               </div>
+              <br />
+              <div *ngIf="reports">
+                <h3>
+                  Pedidos feito em
+                  {{ dateStart | date: "MM/dd/yyyy" }}
+                  à
+                  {{ dateEnd | date: "MM/dd/yyyy" }}
+                </h3>
+                <hr />
+                <div *ngFor="let report of reports">
+                  <h4>
+                    <b>
+                      Mesa {{ report.table.number }} | Data:
+                      {{ report.created_at | date: "MM/dd/yyyy" }} | Valor: R$
+                      {{ report.value }}</b
+                    >
+                  </h4>
+                </div>
+                <hr />
+                <div class="row">
+                  <i style="color: green" class="material-icons"
+                    >attach_money</i
+                  >
+                  <h4 style="font-weight: 900; color: green">
+                    VALOR TOTAL: R$ {{ totalValue }}
+                  </h4>
+                </div>
+              </div>
               <button
                 (click)="extractReport()"
                 mat-raised-button

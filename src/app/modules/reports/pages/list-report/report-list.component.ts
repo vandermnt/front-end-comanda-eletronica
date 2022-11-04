@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
+import { Router } from "@angular/router";
 import { ReportService } from "../../services/report.service";
 
 @Component({
@@ -11,9 +11,10 @@ import { ReportService } from "../../services/report.service";
 export class ReportListComponent implements OnInit {
   @ViewChild("reportForm") reportForm!: NgForm;
 
-  dateStart: Date;
-  dateEnd: Date;
   reports: any[];
+  dateEnd: Date;
+  dateStart: Date;
+  totalValue: number;
 
   constructor(private reportService: ReportService, private router: Router) {}
 
@@ -27,8 +28,19 @@ export class ReportListComponent implements OnInit {
         .getCommandsByDate(this.dateStart, this.dateEnd)
         .subscribe((commands) => {
           this.reports = commands;
+          this.totalValue = this.getTotal(commands);
         });
     }
+  }
+
+  getTotal(reports: any) {
+    let total = 0;
+
+    for (let report of reports) {
+      total = +report.value;
+    }
+
+    return total;
   }
 
   validateInput() {

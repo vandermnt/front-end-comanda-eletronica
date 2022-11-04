@@ -12,6 +12,8 @@ export class ReportService {
   constructor(private backendService: BackendService<Command>) {}
 
   getCommandsByDate(dateStart: Date, dateEnd: Date): Observable<Command[]> {
-    return this.backendService.listByDate(`reports?dateStart=${dateStart}&dateEnd=${dateEnd}`);
+    return this.backendService.listByDate(
+      `reports?dateStart=${dateStart}&dateEnd=${dateEnd}`
+    );
   }
 }
