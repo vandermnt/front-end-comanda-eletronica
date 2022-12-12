@@ -40,6 +40,10 @@ class BackendService<T> {
   listByDate(path: string): Observable<T[]> {
     return this.httpClient.get<T[]>(`${this.BASE_URL}/${path}`, httpOptions);
   }
+
+  login(path: string, data: any): Observable<any> {
+    return this.httpClient.post<T>(`${this.BASE_URL}/${path}`, data, httpOptions)
+  }
 }
 
 export { BackendService };

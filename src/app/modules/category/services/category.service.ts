@@ -24,7 +24,6 @@ export class CategoryService {
   }
 
   update(category: Category): Observable<Category> {
-    console.log(category);
     return this.backendService.update(`${this.path}/${category.id}`, category);
   }
 

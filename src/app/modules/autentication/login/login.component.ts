@@ -20,13 +20,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   async onSubmit() {
-    try {
-      const result = await this.accountService.login(this.login);
-      console.log("login efetuado");
-
-      this.router.navigate([""]);
-    } catch (error) {
-      console.log(error);
-    }
+    this.accountService.login(this.login).subscribe((response) => {
+      if (response.token) {
+        window.localStorage.setItem("token", response.token);
+        this.router.navigate([""]);
+      }
+    });
   }
 }

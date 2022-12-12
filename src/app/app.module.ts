@@ -21,7 +21,7 @@ import { LoginComponent } from "./modules/autentication/login/login.component";
     AppRoutingModule,
     AutenticationModule,
   ],
-  declarations: [AppComponent, AdminLayoutComponent, LoginComponent],
+  declarations: [AppComponent, AdminLayoutComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
