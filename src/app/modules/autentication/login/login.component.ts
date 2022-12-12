@@ -12,8 +12,8 @@ export class LoginComponent implements OnInit {
   @ViewChild("loginForm") loginForm!: NgForm;
 
   login = {
-    email: "teste",
-    password: "opdkwaopd",
+    email: "",
+    password: "",
   };
   constructor(private accountService: AccountService, private router: Router) {}
 

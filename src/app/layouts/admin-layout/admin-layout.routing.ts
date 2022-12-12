@@ -17,7 +17,6 @@ import { EditProductComponent } from "app/modules/product/pages/edit-product/edi
 import { EditCategoryComponent } from "app/modules/category/pages/edit-category/edit-category.component";
 import { NewTableComponent } from "app/modules/table/new-table/new-table.component";
 import { ReportListComponent } from "app/modules/reports/pages/list-report/report-list.component";
-import { LoginComponent } from "app/modules/autentication/login/login.component";
 import { AccountGuard } from "app/modules/autentication/shared/account.guard";
 
 export const AdminLayoutRoutes: Routes = [
@@ -84,5 +83,6 @@ export const AdminLayoutRoutes: Routes = [
       { path: "product/edit/:id", component: EditProductComponent },
       { path: "category/edit/:id", component: EditCategoryComponent },
     ],
+    canActivateChild: [AccountGuard],
   },
 ];

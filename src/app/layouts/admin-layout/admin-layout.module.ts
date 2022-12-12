@@ -40,6 +40,8 @@ import { ReportListComponent } from "app/modules/reports/pages/list-report/repor
 import { ReportModule } from "app/modules/reports/report.module";
 import { LoginComponent } from "app/modules/autentication/login/login.component";
 import { AutenticationModule } from "app/modules/autentication/autentication.module";
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { AuthInterceptor } from "app/modules/autentication/auth.interceptor";
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: "left",
@@ -96,6 +98,7 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   ],
   providers: [
     { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
 })
 export class AdminLayoutModule {}
