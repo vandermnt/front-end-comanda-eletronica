@@ -4,12 +4,15 @@ import { BrowserModule } from "@angular/platform-browser";
 import { Routes, RouterModule } from "@angular/router";
 
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
+import { AccountGuard } from "./modules/autentication/shared/account.guard";
+import { LoginComponent } from "./modules/autentication/login/login.component";
 
 const routes: Routes = [
   {
     path: "",
     redirectTo: "commands",
     pathMatch: "full",
+    canActivate: [AccountGuard],
   },
   {
     path: "",
@@ -23,6 +26,16 @@ const routes: Routes = [
           ),
       },
     ],
+    canActivate: [AccountGuard],
+  },
+  {
+    path: "/",
+    redirectTo: "login",
+    pathMatch: "full",
+  },
+  {
+    path: "login",
+    component: LoginComponent,
   },
 ];
 

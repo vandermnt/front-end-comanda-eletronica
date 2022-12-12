@@ -38,6 +38,8 @@ import {
 } from "ng2-currency-mask";
 import { ReportListComponent } from "app/modules/reports/pages/list-report/report-list.component";
 import { ReportModule } from "app/modules/reports/report.module";
+import { LoginComponent } from "app/modules/autentication/login/login.component";
+import { AutenticationModule } from "app/modules/autentication/autentication.module";
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: "left",

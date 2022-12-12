@@ -37,7 +37,8 @@ export class ReportListComponent implements OnInit {
     let total = 0;
 
     for (let report of reports) {
-      total = +report.value;
+      console.log(report);
+      total += parseFloat(report.value);
     }
 
     return total;

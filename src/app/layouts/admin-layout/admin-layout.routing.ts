@@ -17,6 +17,8 @@ import { EditProductComponent } from "app/modules/product/pages/edit-product/edi
 import { EditCategoryComponent } from "app/modules/category/pages/edit-category/edit-category.component";
 import { NewTableComponent } from "app/modules/table/new-table/new-table.component";
 import { ReportListComponent } from "app/modules/reports/pages/list-report/report-list.component";
+import { LoginComponent } from "app/modules/autentication/login/login.component";
+import { AccountGuard } from "app/modules/autentication/shared/account.guard";
 
 export const AdminLayoutRoutes: Routes = [
   // {
@@ -61,21 +63,26 @@ export const AdminLayoutRoutes: Routes = [
   //         component: UpgradeComponent
   //     }]
   // }
-  { path: "commands", component: ListCommandComponent },
-  { path: "users", component: ListProfileComponent },
-  { path: "user/new", component: UserProfileComponent },
-  { path: "tables", component: TableListComponent },
-  { path: "typography", component: TypographyComponent },
-  { path: "icons", component: IconsComponent },
-  { path: "maps", component: MapsComponent },
-  { path: "notifications", component: NotificationsComponent },
-  { path: "upgrade", component: UpgradeComponent },
-  { path: "categories", component: CategoryListComponent },
-  { path: "category/new", component: NewCategoryComponent },
-  { path: "products", component: ProductListComponent },
-  { path: "reports", component: ReportListComponent },
-  { path: "product/new", component: NewProductComponent },
-  { path: "table/new", component: NewTableComponent },
-  { path: "product/edit/:id", component: EditProductComponent },
-  { path: "category/edit/:id", component: EditCategoryComponent },
+  {
+    path: "",
+    children: [
+      { path: "commands", component: ListCommandComponent },
+      { path: "users", component: ListProfileComponent },
+      { path: "user/new", component: UserProfileComponent },
+      { path: "tables", component: TableListComponent },
+      { path: "typography", component: TypographyComponent },
+      { path: "icons", component: IconsComponent },
+      { path: "maps", component: MapsComponent },
+      { path: "notifications", component: NotificationsComponent },
+      { path: "upgrade", component: UpgradeComponent },
+      { path: "categories", component: CategoryListComponent },
+      { path: "category/new", component: NewCategoryComponent },
+      { path: "products", component: ProductListComponent },
+      { path: "reports", component: ReportListComponent },
+      { path: "product/new", component: NewProductComponent },
+      { path: "table/new", component: NewTableComponent },
+      { path: "product/edit/:id", component: EditProductComponent },
+      { path: "category/edit/:id", component: EditCategoryComponent },
+    ],
+  },
 ];
